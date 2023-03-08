@@ -1,7 +1,3 @@
-# Doge NFT Auction
-
-![Doge NFT Auction](https://repository-images.githubusercontent.com/367550525/60e38280-c786-11eb-8b1c-c70d3110068a)
-
 The original Doge memes are being auctioned off as 1/1 NFTs for charity.
 
 Own these pieces of internet history.
@@ -9,7 +5,6 @@ Own these pieces of internet history.
 Brought to you by Atsuko Sato and Kabosu.
 
 This gallery uses `@zoralabs/nft-components` to render custom auctions. Fork this to create your own curated auction house or galleries of Zora media or ERC721s.
-
 
 #### Code structure:
 - `lib/`: Constants and content
@@ -23,4 +18,3 @@ This gallery uses `@zoralabs/nft-components` to render custom auctions. Fork thi
 1. Update content and referenced NFTs in `lib/` and in `pages/`
 2. Update styles in `scss/`
 3. Publish! Next.js works well with vercel and netlify
-
