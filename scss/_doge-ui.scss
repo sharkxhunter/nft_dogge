@@ -1,0 +1,139 @@
+.doggie {
+  width: 20rem;
+  height: 20rem;
+  position: relative;
+  filter: var(--black-shadow);
+  overflow: visible;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.go-home {
+  &_wrapper {
+    position: relative;
+    top: 0;
+    width: 100%;
+    display: flex;
+    overflow: visible;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-sm) 0;
+    z-index: 12000;
+    .doggie {
+      z-index: 10;
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+  &_link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &_cta {
+    z-index: 1;
+    position: fixed!important;
+    top: var(--space-lg);
+    right: var(--space-sm);
+    max-width: 15rem;
+    width: 100%;
+  }
+  &_paint-wrapper {
+    transform: rotate(200deg) scale(.75);
+    position: fixed;
+    top: -35rem;
+    left: -15rem;
+    z-index: 0;
+    display: none;
+  }
+  &_paint {
+    overflow: visible;
+    * {
+      fill: yellow;
+    }
+  }
+}
+
+@media(--lg) {
+  .doggie {
+    width: 15rem;
+    height: 15rem;
+    margin: 0 auto;
+  }
+  .go-home {
+    &_wrapper {
+      position: fixed;
+      justify-content: center;
+      top: 0;
+      left: 0;
+      padding-top: var(--space-md);
+      width: calc(var(--sidebar) * .85);
+      height: calc(var(--sidebar) * .85);
+      transition: all 250ms var(--boing);
+      animation: fadeIn 550ms var(--ease) 250ms;
+      animation-fill-mode: both;
+      z-index: 10;
+      * {
+        transition: all 250ms var(--boing);
+      }
+      .doggie {
+        width: 15rem;
+        height: 15rem;
+      }
+    }
+    &_cta {
+      margin: 0 auto;
+      position: relative!important;
+      transform: translateY(-1rem);
+      top: auto;
+      right: auto;
+    }
+    &_link {
+      display: block;
+    }
+    &_paint-wrapper {
+      display: block;
+    }
+  }
+}
+
+@media(--xl) {
+  .doggie {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+@media(--xxl) {
+  .go-home {
+    &_wrapper {
+      width: var(--sidebar);
+      height: var(--sidebar);
+      .doggie {
+        width: 16rem;
+        height: 16rem;
+      }
+    }
+  }
+}
+
+@media(--hover) {
+  .go-home {
+    &_wrapper:hover {
+      path {
+        animation: shadowColor 500ms alternate-reverse infinite;
+      }
+      .doggie {
+        animation: spin 5000ms infinite linear;
+      }
+      .go-home_cta {
+        transform: translateY(-.75rem) rotate(2deg) scale(1.125);
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+  }
+}

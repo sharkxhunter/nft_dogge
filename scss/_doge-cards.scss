@@ -1,0 +1,301 @@
+// LAUNCH OVERRIDES
+.doge-cards {
+  &_list-item {
+    &:first-child {
+      .zora-cardAuctionPricing {
+        display: flex;
+        flex-direction: column;
+        top: -1rem;
+        left: 1rem;
+        span:first-child {
+          padding-bottom: .5rem;
+        }
+      }
+      .zora-placeHolderInfo {
+        display: none;
+      }
+    }
+  }
+}
+
+.doge-cards {
+  &_list-item {
+    width: 100%;
+    position: relative;
+    padding-top: 75%;
+    display: block;
+    transform: translateZ(0);
+    &:first-child {
+      padding-top: 110%;
+      overflow: visible;
+      .zora {
+        &-cardAuctionPricing {
+          opacity: 1;
+          transform: scale(1);
+          * {
+            color: var(--white)!important;
+            font-size: var(--text-02);
+            line-height: 1.25;
+          }
+        }
+        &-cardMediaWrapper {
+          top:  5.5rem;
+          height: 67%!important;
+          transform: rotate(-1deg);
+        }
+        &-cardItemInfo {
+          border: 0;
+          padding: 0 var(--space-md);
+          height: calc(var(--button-height) * 2);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 100;
+          font-size: var(--text-04);
+          right: 0;
+          left: 0;
+          margin: auto;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+    &:last-child {
+      padding-top: 100%;
+    }
+  }
+}
+
+.doge-card {
+  &_wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  }
+  &_wrapper-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &_image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    background: grey;
+  }
+}
+
+.doge-card_wrapper {
+  .zora {
+    &-cardOuter {
+      border: 0;
+      background-color: var(--transparent);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: visible;
+      margin: 0!important;
+      * {
+        font-family: var(--font)!important;
+      }
+    }
+    &-cardMediaWrapper {
+      top: 0;
+      width: 100%!important;
+      height: 100%!important;
+      border-radius: 3rem;
+    }
+    &-cardAuctionPricing,
+    &-placeHolderInfo {
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      border-radius: 10px;
+      background-color: var(--blue);
+      filter: var(--black-shadow);
+      border: 0;
+      opacity: 0;
+      transform: scale(.8);
+      transition: transform 350ms var(--boing), opacity 150ms var(--ease);
+      * {
+        color: var(--white)!important;
+        font-size: var(--text-01);
+        line-height: 1.25;
+      }
+    }
+    &-placeHolderInfo {
+      opacity: 1;
+      padding: 2rem;
+      z-index: 100;
+      * {
+        font-size: var(--text-03);
+      }
+    }
+    &-pricingAmount {
+      padding-right: 2rem;
+    }
+    &-cardItemInfo {
+      border: 0;
+      padding: 0 var(--space-md);
+      height: var(--button-height);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: calc((var(--button-height) / 2) * -1);
+      right: 3rem;
+      z-index: 100;
+      font-size: var(--text-02);
+      border-radius: 50rem;
+      background: blue;
+      color: white;
+      transition: all 350ms var(--ease);
+      box-shadow:
+        0 0 5px 0px blue,
+        0 0 5px 5px #fff,
+        0 0 7px 9px #f0f,
+        0 0 10px 12px #0ff;
+      div {
+        display: none;
+      }
+      .zora-cardTitle {
+        display: block;
+      }
+    }
+  }
+}
+
+@media(--lg) {
+  .doge-cards {
+    &_list-item {
+      animation: shadowColor 11750ms var(--ease) alternate infinite;
+      &:first-child {
+        padding-top: 75%;
+        .zora {
+          &-cardAuctionPricing {
+            opacity: 1;
+            transform: scale(1);
+            * {
+              color: var(--white)!important;
+              font-size: var(--text-02);
+              line-height: 1.25;
+            }
+          }
+          &-cardMediaWrapper {
+            top: 0rem;
+            height: 100%!important;
+            transform: rotate(-.25deg);
+          }
+          &-placeHolderInfo {
+            left: 3rem;
+          }
+          &-cardItemInfo {
+            border: 0;
+            padding: 0 var(--space-md);
+            height: calc(var(--button-height) * 2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: calc((var(--button-height) / 2) * -1);
+            right: 3rem!important;
+            left: auto;
+            z-index: 100;
+            font-size: var(--text-05);
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+  .doge-cards {
+    &_list-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+      width: calc(100vw - (var(--sidebar) + (var(--space-md) * 3)) - 8rem);
+      height: calc(100vh - (var(--space-md) * 2) - 10rem);
+      padding-top: 0;
+    }
+  }
+  .doge-card {
+    &_wrapper {
+      transition: transform 450ms var(--boing);
+      will-change: transform;
+      width: 100%;
+      margin: auto;
+    }
+  }
+}
+
+@media(--xl) {
+  .doge-cards {
+    &_list-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+      width: calc(100vw - (var(--sidebar) + (var(--space-md) * 3)) - 10rem);
+      height: calc(100vh - (var(--space-md) * 2) - 10rem);
+    }
+  }
+  .doge-card {
+    &_wrapper {
+      width: 100%;
+    }
+  }
+}
+
+@media(--xxl) {
+  .doge-cards {
+    &_list-item:first-child {
+      width: calc(100vw - (var(--sidebar) + (var(--space-md) * 3)) - 12rem);
+      height: calc(100vh - (var(--space-md) * 2) - 12rem);
+    }
+  }
+}
+
+@media (hover: none) {
+  .doge-card_wrapper {
+    .zora {
+      &-cardAuctionPricing {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+@media(hover:hover) {
+  .doge-card_wrapper:hover {
+    transform: rotate(-2deg) scale(1.05);
+    animation: shadowColor 250ms alternate-reverse infinite;
+    z-index: 2000;
+    .zora-cardAuctionPricing {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .zora-cardItemInfo {
+      transform: rotate(2deg);
+      box-shadow:
+        0 0 10px 0px blue,
+        0 0 20px 10px #fff,
+        0 0 30px 30px #f0f,
+        0 0 35px 50px #0ff;
+    }
+  }
+}

@@ -1,0 +1,225 @@
+// NFT COMPONENT STYLING
+.zora {
+  &-fullMediaWrapper {
+    margin: 0 auto var(--space-md)!important;
+    filter: drop-shadow(0 0 0.75rem grey);
+  }
+  &-fullItemInfo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &-fullLabel {
+    opacity: 1!important;
+    text-align: center;
+    margin: auto;
+  }
+  &-pricingAmount,
+  &-fullPageHistoryItemDatestamp {
+    color: var(--price-color)!important;
+    opacity: 1!important;
+  }
+  &-fullTitle {
+    margin: 0 auto!important;
+  }
+  &-fullDescription {
+    text-align: center;
+    padding: var(--space-sm) 0 var(--space-lg);
+    font-size: var(--text-03);
+    border-bottom: 3px solid var(--blue);
+    margin-bottom: var(--space-md)!important;
+    position: relative;
+    display: flex;
+    line-height: 1.35;
+  }
+  &-infoContainer,
+  &-fullItemInfo {
+    background-color: white;
+    border-radius: var(--gutter);
+    padding: var(--gutter)!important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: var(--gutter);
+    filter: var(--sm-shadow);
+    &:last-child {
+      display: none;
+    }
+  }
+  &-fullPageHistoryItem {
+    width: 100%;
+    display: flex;
+    flex-direction: row!important;
+    border-bottom: 1px dashed var(--light-grey);
+    padding: 1rem 0;
+    justify-content: space-between;
+    * {
+      font-size: var(--text-01)!important;
+    }
+  }
+  &-fullCreatorOwnerSection {
+    grid-column-gap: 2rem!important;
+    align-items: center!important;
+    grid-template-columns: 1fr 1fr!important;
+    display: flex!important;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 0!important;
+    padding-bottom: 1.5rem!important;
+    .zora-fullLabel {
+      margin: 0!important;
+    }
+    * {
+      text-align: center!important;
+    }
+    div {
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        display: none;
+      }
+    }
+  }
+  &-fullInfoAuctionWrapper {
+    text-align: center!important;
+    * {
+      text-align: center;
+      margin: 0 auto!important;
+    }
+    .zora-fullLabel {
+      width: 100%!important;
+      justify-content: center;
+      padding-bottom: 5px;
+    }
+  }
+  &-textSubdued {
+    color: orange!important;
+    opacity: 1!important;
+  }
+  &-fullLabel {
+    display: flex;
+    align-items: center;
+  }
+  &-fullPlaceOfferButton {
+    margin-top: -3rem;
+    .zora-button {
+      font-size: var(--text-04);
+      max-width: 28rem!important;
+      height: 5rem;
+      text-align: center;
+    }
+  }
+  &-fullInfoProofAuthenticityContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  &-button,
+  &-fullPlaceOfferButton a {
+    margin: 0 auto var(--space-sm)!important;
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 20rem!important;
+    border-radius: 50rem!important;
+    animation: var(--teeter-animation);
+    animation-fill-mode: both;
+    background-color: var(--price-color)!important;
+    border: 3px solid var(--price-color)!important;
+    color: var(--white)!important;
+    text-decoration: none!important;
+    height: 3rem;
+  }
+  &-fullProofLink {
+    display: flex!important;
+    align-items: center!important;
+    justify-content: center!important;
+    padding: var(--space-sm)!important;
+    text-align: center;
+    height: 4rem;
+    border-radius: 50rem!important;
+    color: var(--blue)!important;
+    border: 1px solid var(--blue)!important;
+    margin: 0 auto var(--space-sm)!important;
+    font-size: var(--text-01);
+    animation: var(--teeter-animation);
+    &::after {
+      display: none!important;
+    }
+    &:last-child {
+      margin-bottom: 0!important;
+    }
+  }
+  &-fullOwnerAddress {
+    color: var(--price-color)!important;
+  }
+  &-mediaLoader {
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    min-height: auto!important;
+    width: 12rem!important;
+    height: 12rem!important;
+    border-radius: 6rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: var(--blue);
+    animation: var(--spin-animation);
+    box-shadow:
+      0 0 5px 0px var(--blue),
+      0 0 5px 5px #fff,
+      0 0 7px 9px #f0f,
+      0 0 10px 12px #0ff;
+    span {
+      font-size: var(--text-01);
+      color: var(--white)!important;
+      position: relative;
+      width: 100%!important;
+      text-align: center!important;
+    }
+  }
+}
+
+@media(--md) {
+  .zora {
+    &-fullInfoProofAuthenticityContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    &-fullProofLink {
+      margin-bottom: 0!important;
+    }
+  }
+}
+
+@media(--xl) {
+  .zora {
+    &-fullPlaceOfferButton a {
+      height: 5rem;
+      font-size: var(--text-04)!important;
+    }
+  }
+}
+
+@media(--hover) {
+  .zora {
+    &-fullProofLink {
+      &:hover {
+        color: var(--white)!important;
+        background-color: var(--blue)!important;
+      }
+    }
+    &-button,
+    &-fullPlaceOfferButton a:hover {
+      animation: var(--shadow-animation);
+      color: var(--blue)!important;
+      background-color: var(--white)!important;
+    }
+  }
+    
+}
