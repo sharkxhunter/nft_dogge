@@ -9,6 +9,7 @@ export default function Index({ data }) {
     <>
       <Head
         title="Doge NFT Auction"
+        <h1>Welcome to Doge NFT Auction!</h1>
         description="The original Doge memes are being auctioned off as 1/1 NFTs for charity. Own these pieces of internet history. Brought to you by Atsuko Sato and Kabosu."
       />
       <DogeSidebar/>
